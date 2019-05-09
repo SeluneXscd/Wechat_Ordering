@@ -1,31 +1,8 @@
-Starting LoggerTest on Selune-PC with PID 8668 (started by 13539 in C:\Users\13539\IdeaProjects\wechat_ordering)
+Starting LoggerTest on selune-manjaro with PID 20811 (started by selune in /home/selune/WorkSpace/Idea/Wechat_Ordering)
 No active profile set, falling back to default profiles: default
-Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1356d4d4: startup date [Thu May 09 21:39:20 CST 2019]; root of context hierarchy
+Refreshing org.springframework.web.context.support.GenericWebApplicationContext@15043a2f: startup date [Thu May 09 22:07:15 CST 2019]; root of context hierarchy
 HV000001: Hibernate Validator 5.3.6.Final
-Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1356d4d4: startup date [Thu May 09 21:39:20 CST 2019]; root of context hierarchy
-Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-Started LoggerTest in 3.879 seconds (JVM running for 6.785)
-info....
-name= name, password= password
-Closing org.springframework.web.context.support.GenericWebApplicationContext@1356d4d4: startup date [Thu May 09 21:39:20 CST 2019]; root of context hierarchy
-Starting ProductCategoryRepositoryTest on Selune-PC with PID 13580 (started by 13539 in C:\Users\13539\IdeaProjects\wechat_ordering)
-No active profile set, falling back to default profiles: default
-Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2fd1433e: startup date [Thu May 09 21:51:16 CST 2019]; root of context hierarchy
-HV000001: Hibernate Validator 5.3.6.Final
-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b97a5f1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Tomcat.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.tomcat.jdbc.pool.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Cannot determine embedded database driver class for database type NONE. If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
-
-
-Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
-Starting ProductCategoryRepositoryTest on Selune-PC with PID 12576 (started by 13539 in C:\Users\13539\IdeaProjects\wechat_ordering)
-No active profile set, falling back to default profiles: default
-Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5f049ea1: startup date [Thu May 09 21:57:50 CST 2019]; root of context hierarchy
-HV000001: Hibernate Validator 5.3.6.Final
-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1fce63bf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$94f8bbd4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 Building JPA container EntityManagerFactory for persistence unit 'default'
 HHH000204: Processing PersistenceUnitInfo [
 	name: default
@@ -37,12 +14,41 @@ HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
 HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
 HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
 Initialized JPA EntityManagerFactory for persistence unit 'default'
-Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@5f049ea1: startup date [Thu May 09 21:57:50 CST 2019]; root of context hierarchy
+Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@15043a2f: startup date [Thu May 09 22:07:15 CST 2019]; root of context hierarchy
+Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Started LoggerTest in 8.31 seconds (JVM running for 9.196)
+info....
+name= name, password= password
+Closing org.springframework.web.context.support.GenericWebApplicationContext@15043a2f: startup date [Thu May 09 22:07:15 CST 2019]; root of context hierarchy
+Closing JPA EntityManagerFactory for persistence unit 'default'
+Starting LoggerTest on selune-manjaro with PID 20904 (started by selune in /home/selune/WorkSpace/Idea/Wechat_Ordering)
+No active profile set, falling back to default profiles: default
+Refreshing org.springframework.web.context.support.GenericWebApplicationContext@15043a2f: startup date [Thu May 09 22:08:10 CST 2019]; root of context hierarchy
+HV000001: Hibernate Validator 5.3.6.Final
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f70b239b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Building JPA container EntityManagerFactory for persistence unit 'default'
+HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+HHH000412: Hibernate Core {5.0.12.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+Initialized JPA EntityManagerFactory for persistence unit 'default'
+Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@15043a2f: startup date [Thu May 09 22:08:10 CST 2019]; root of context hierarchy
 Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
 Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
 Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-Started ProductCategoryRepositoryTest in 9.531 seconds (JVM running for 11.171)
-Closing org.springframework.web.context.support.GenericWebApplicationContext@5f049ea1: startup date [Thu May 09 21:57:50 CST 2019]; root of context hierarchy
+Started LoggerTest in 8.939 seconds (JVM running for 10.014)
+info....
+name= name, password= password
+Closing org.springframework.web.context.support.GenericWebApplicationContext@15043a2f: startup date [Thu May 09 22:08:10 CST 2019]; root of context hierarchy
 Closing JPA EntityManagerFactory for persistence unit 'default'

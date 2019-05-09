@@ -1,4 +1,4 @@
-create database sell DEFAULT CHARACTER SET utf8mb4;
+create database Wechat_Ordering DEFAULT CHARACTER SET utf8mb4;
 
 use sell;
 

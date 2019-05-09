@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="35cm" height="22cm" viewBox="501 259 691 435" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="808" y="261" width="78.8" height="51.75"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="808" y="261" width="78.8" height="51.75"/>
+    <text font-size="25.3996" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="847.4" y="298.781">买家</text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="577,334.24 622.4,307 667.8,334.24 622.4,361.48 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="577,334.24 622.4,307 667.8,334.24 622.4,361.48 "/>
+    <text font-size="25.3996" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="571" y="328.24"/>
+    <text font-size="25.3996" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="673.8" y="328.24"/>
+    <text font-size="25.3996" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="622.4" y="346.146">查询</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="502" y="473" width="73.2" height="48.2222"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="502" y="473" width="73.2" height="48.2222"/>
+    <text font-size="22.5774" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="538.6" y="507.694">商品</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="810" y="642" width="78.8" height="51.75"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="810" y="642" width="78.8" height="51.75"/>
+    <text font-size="25.3996" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="849.4" y="679.781">卖家</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1112" y="469" width="78.8" height="51.75"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1112" y="469" width="78.8" height="51.75"/>
+    <text font-size="25.3996" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1151.4" y="506.781">订单</text>
+  </g>
+  <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 806.994,280.972 A 272.9,272.9 0 0 0 645.1,320.62"/>
+  <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 596.5,362.451 A 277.268,277.268 0 0 0 543.288,472.01"/>
+  <g>
+    <polygon style="fill: #ffffff" points="804,495.24 849.4,468 894.8,495.24 849.4,522.48 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="804,495.24 849.4,468 894.8,495.24 849.4,522.48 "/>
+    <text font-size="25.3996" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="798" y="489.24"/>
+    <text font-size="25.3996" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="900.8" y="489.24"/>
+    <text font-size="25.3996" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="849.4" y="507.146">消息</text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="847.658" y1="313.747" x2="849.129" y2="466.994"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="849.4" y1="523.489" x2="849.4" y2="641.027"/>
+  <g>
+    <polygon style="fill: #ffffff" points="1019,332.245 1076.08,298 1133.15,332.245 1076.08,366.49 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1019,332.245 1076.08,298 1133.15,332.245 1076.08,366.49 "/>
+    <text font-size="16.9331" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="1013" y="326.245"/>
+    <text font-size="16.9331" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1139.15" y="326.245"/>
+    <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1076.08" y="340.182">创建/查询</text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="576,634.24 621.4,607 666.8,634.24 621.4,661.48 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="576,634.24 621.4,607 666.8,634.24 621.4,661.48 "/>
+    <text font-size="25.3996" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="570" y="628.24"/>
+    <text font-size="25.3996" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="672.8" y="628.24"/>
+    <text font-size="25.3996" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="621.4" y="646.146">管理</text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="1020,633.245 1077.08,599 1134.15,633.245 1077.08,667.49 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1020,633.245 1077.08,599 1134.15,633.245 1077.08,667.49 "/>
+    <text font-size="16.9331" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="1014" y="627.245"/>
+    <text font-size="16.9331" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1140.15" y="627.245"/>
+    <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1077.08" y="641.182">查询/接单</text>
+  </g>
+  <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 541.835,522.215 A 170.376,170.376 0 0 0 585.905,606.024"/>
+  <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 661.913,662.486 A 210.231,210.231 0 0 0 809.017,681.793"/>
+  <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 889.801,683.675 A 193.894,193.894 0 0 0 1028.98,668.492"/>
+  <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 1018.05,300.054 A 279.971,279.971 0 0 0 887.755,280.342"/>
+  <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 1156.27,468.028 A 136.983,136.983 0 0 0 1123.31,367.464"/>
+  <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 1119.22,597.997 A 145.108,145.108 0 0 0 1151.03,521.749"/>
+</svg>
