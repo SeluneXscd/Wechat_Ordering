@@ -1,4 +1,4 @@
-package com.selune.wechat_ordering.logger;
+package com.selune.wechatordering.logger;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

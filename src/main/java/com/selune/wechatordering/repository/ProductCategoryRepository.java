@@ -1,6 +1,6 @@
-package com.selune.wechat_ordering.repository;
+package com.selune.wechatordering.repository;
 
-import com.selune.wechat_ordering.pojo.ProductCategory;
+import com.selune.wechatordering.pojo.ProductCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.selune.wechat_ordering.service;
+package com.selune.wechatordering.service;
 
-import com.selune.wechat_ordering.pojo.ProductCategory;
+import com.selune.wechatordering.pojo.ProductCategory;
 
 import java.util.List;
 

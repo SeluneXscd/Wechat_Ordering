@@ -1,4 +1,4 @@
-package com.selune.wechat_ordering;
+package com.selune.wechatordering;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

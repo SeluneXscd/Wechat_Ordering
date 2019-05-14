@@ -5,7 +5,8 @@ spring:
     password: admin
     url: jdbc:mysql://127.0.0.2:3309/sell?characterEncoding=utf-8&useSSL=false
   jpa:
-    show-sql: true
+    show-sql: false
 
 server:
   context-path: /sell
+  port: 8088

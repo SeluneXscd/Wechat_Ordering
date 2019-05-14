@@ -1,6 +1,6 @@
-package com.selune.wechat_ordering.service.impl;
+package com.selune.wechatordering.service.impl;
 
-import com.selune.wechat_ordering.pojo.ProductCategory;
+import com.selune.wechatordering.pojo.ProductCategory;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,8 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * @Author: Selune

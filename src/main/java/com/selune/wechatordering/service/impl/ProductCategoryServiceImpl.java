@@ -1,8 +1,8 @@
-package com.selune.wechat_ordering.service.impl;
+package com.selune.wechatordering.service.impl;
 
-import com.selune.wechat_ordering.pojo.ProductCategory;
-import com.selune.wechat_ordering.repository.ProductCategoryRepository;
-import com.selune.wechat_ordering.service.ProductCategoryService;
+import com.selune.wechatordering.pojo.ProductCategory;
+import com.selune.wechatordering.repository.ProductCategoryRepository;
+import com.selune.wechatordering.service.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
