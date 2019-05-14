@@ -1,5 +1,6 @@
 package com.selune.wechatordering.service;
 
+import com.selune.wechatordering.dto.CartDTO;
 import com.selune.wechatordering.pojo.ProductInfo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,7 +26,9 @@ public interface ProductInfoService {
 
     ProductInfo save(ProductInfo productInfo);
 
-    // TODO: 增加库存
+    /** 增加库存 */
+    void increaseStock(List<CartDTO> cartDTOList);
 
-    // TODO: 减少库存
+    /** 减少库存 */
+    void decreaseStock(List<CartDTO> cartDTOList);
 }

@@ -31,6 +31,7 @@
 5. 缓存:
    - SpringBoot + Redis
       - Redis: 分布式 Session 和 分布式锁
+      - 解决`超卖`
 
 6. 消息推送:
    - WebSocket

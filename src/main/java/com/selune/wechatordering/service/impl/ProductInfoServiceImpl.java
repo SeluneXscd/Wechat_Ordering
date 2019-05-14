@@ -1,6 +1,9 @@
 package com.selune.wechatordering.service.impl;
 
+import com.selune.wechatordering.dto.CartDTO;
 import com.selune.wechatordering.enums.ProductStatusEnum;
+import com.selune.wechatordering.enums.ResultEnum;
+import com.selune.wechatordering.exception.WeChatOrderException;
 import com.selune.wechatordering.pojo.ProductInfo;
 import com.selune.wechatordering.repository.ProductInfoRepository;
 import com.selune.wechatordering.service.ProductInfoService;
@@ -8,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -40,6 +44,30 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public ProductInfo save(ProductInfo productInfo) {
         return productInfoRepository.save(productInfo);
+    }
+
+    @Override
+    public void increaseStock(List<CartDTO> cartDTOList) {
+
+    }
+
+    @Override
+    @Transactional
+    public void decreaseStock(List<CartDTO> cartDTOList) {
+        for (CartDTO cartDTO : cartDTOList) {
+            ProductInfo productInfo = productInfoRepository.findOne(cartDTO.getProductId());
+            if (null == productInfo) {
+                throw new WeChatOrderException(ResultEnum.PRODUCT_NOT_EXIST);
+            }
+
+            Integer result = productInfo.getProductStock() - cartDTO.getProductQuantity();
+            if (result < 0) {
+                throw new WeChatOrderException(ResultEnum.PRODUCT_STOCK_ERROR);
+            }
+
+            productInfo.setProductStock(result);
+            productInfoRepository.save(productInfo);
+        }
     }
 
 }
