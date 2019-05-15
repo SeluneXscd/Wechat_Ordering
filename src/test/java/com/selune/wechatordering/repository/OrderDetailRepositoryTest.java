@@ -1,6 +1,6 @@
 package com.selune.wechatordering.repository;
 
-import com.selune.wechatordering.enums.OrderDetail;
+import com.selune.wechatordering.pojo.OrderDetail;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,8 +10,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * @Author: Selune

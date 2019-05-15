@@ -1,6 +1,6 @@
 package com.selune.wechatordering.repository;
 
-import com.selune.wechatordering.enums.OrderDetail;
+import com.selune.wechatordering.pojo.OrderDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

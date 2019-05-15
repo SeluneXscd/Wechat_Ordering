@@ -3,7 +3,7 @@ package com.selune.wechatordering.service.impl;
 import com.selune.wechatordering.converter.OrderMaster2OrderDTOConverter;
 import com.selune.wechatordering.dto.CartDTO;
 import com.selune.wechatordering.dto.OrderDTO;
-import com.selune.wechatordering.enums.OrderDetail;
+import com.selune.wechatordering.pojo.OrderDetail;
 import com.selune.wechatordering.enums.OrderStatusEnum;
 import com.selune.wechatordering.enums.PayStatusEnum;
 import com.selune.wechatordering.enums.ResultEnum;

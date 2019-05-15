@@ -1,6 +1,6 @@
 package com.selune.wechatordering.dto;
 
-import com.selune.wechatordering.enums.OrderDetail;
+import com.selune.wechatordering.pojo.OrderDetail;
 import lombok.Data;
 
 import java.math.BigDecimal;

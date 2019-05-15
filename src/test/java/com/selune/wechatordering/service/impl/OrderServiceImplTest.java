@@ -1,9 +1,7 @@
 package com.selune.wechatordering.service.impl;
 
-import com.selune.wechatordering.dto.CartDTO;
 import com.selune.wechatordering.dto.OrderDTO;
-import com.selune.wechatordering.enums.OrderDetail;
-import com.selune.wechatordering.pojo.OrderMaster;
+import com.selune.wechatordering.pojo.OrderDetail;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
@@ -16,8 +14,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * @Author: Selune

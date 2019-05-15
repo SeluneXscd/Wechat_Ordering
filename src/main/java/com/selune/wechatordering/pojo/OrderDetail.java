@@ -1,4 +1,4 @@
-package com.selune.wechatordering.enums;
+package com.selune.wechatordering.pojo;
 
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
