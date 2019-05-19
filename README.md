@@ -43,6 +43,10 @@
 
 ### *项目设计*
 
+##### api文档
+
+[api文档](./docs/API.md)
+
 ##### 角色划分
 
 1. 买家
@@ -50,7 +54,7 @@
 
 ##### 功能模块划分
 
-<div align=center><img src="E-R.svg" width="60%"></div>
+<div align=center><img src="./docs/E-R.svg" width="60%"></div>
 
 ##### 部署架构
 
@@ -60,7 +64,7 @@
 
 1. 表之间的关系
 
-<div align=center><img src="E-R1.svg" width="75%" ></div>
+<div align=center><img src="./docs/E-R1.svg" width="75%" ></div>
 
 2. 具体表
 
@@ -84,7 +88,7 @@
 
 ### *日志*
 
-[日志框架](logger.md)
+[日志框架](./docs/logger.md)
 
 ### *功能实现*
 
