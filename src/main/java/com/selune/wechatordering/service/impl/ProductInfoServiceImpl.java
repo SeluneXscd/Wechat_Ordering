@@ -47,8 +47,18 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     }
 
     @Override
+    @Transactional
     public void increaseStock(List<CartDTO> cartDTOList) {
+        for (CartDTO cartDTO : cartDTOList) {
+            ProductInfo productInfo = productInfoRepository.findOne(cartDTO.getProductId());
+            if (null == productInfo) {
+                throw new WeChatOrderException(ResultEnum.PRODUCT_NOT_EXIST);
+            }
+            Integer result = productInfo.getProductStock() + cartDTO.getProductQuantity();
+            productInfo.setProductStock(result);
 
+            productInfoRepository.save(productInfo);
+        }
     }
 
     @Override

@@ -15,6 +15,7 @@ import com.selune.wechatordering.repository.OrderMasterRepository;
 import com.selune.wechatordering.service.OrderService;
 import com.selune.wechatordering.service.ProductInfoService;
 import com.selune.wechatordering.utils.KeyUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -35,6 +36,7 @@ import java.util.stream.Collectors;
  */
 
 @Service
+@Slf4j
 public class OrderServiceImpl implements OrderService {
 
     @Autowired
@@ -93,11 +95,14 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderDTO findOne(String orderId) {
+
+        // 查看主订单
         OrderMaster orderMaster = orderMasterRepository.findOne(orderId);
         if (null == orderMaster) {
             throw new WeChatOrderException(ResultEnum.ORDER_NOT_EXIST);
         }
 
+        // 查看订单详情
         List<OrderDetail> orderDetailList = orderDetailRepository.findByOrderId(orderId);
         if (CollectionUtils.isEmpty(orderDetailList)) {
             throw new WeChatOrderException(ResultEnum.ORDERDETAIL_NOT_EXIST);
@@ -127,17 +132,95 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    @Transactional
     public OrderDTO cancel(OrderDTO orderDTO) {
-        return null;
+
+        OrderMaster orderMaster = new OrderMaster();
+
+        // 1. 判断订单状态
+        if (!orderDTO.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())) {
+            log.error("【取消订单】订单状态不正确，orderId= {}, orderStatus= {}", orderDTO.getOrderId(),
+                    orderDTO.getOrderStatus());
+            throw new WeChatOrderException(ResultEnum.ORDER_STATUS_ERROR);
+        }
+
+        // 2. 修改订单状态
+        orderDTO.setOrderStatus(OrderStatusEnum.CANCEL.getCode());
+        BeanUtils.copyProperties(orderDTO, orderMaster);
+        OrderMaster updateResult = orderMasterRepository.save(orderMaster);
+        if (null == updateResult) {
+            log.error("【取消订单】订单更新失败，orderMaster= {}", orderMaster);
+            throw new WeChatOrderException(ResultEnum.ORDER_UPDATE_FAIL);
+        }
+
+        // 3. 返回库存
+        if (CollectionUtils.isEmpty(orderDTO.getOrderDetailList())) {
+            log.error("【取消订单】订单中无商品详情，orderDTO= {}", orderDTO);
+            throw new WeChatOrderException(ResultEnum.ORDER_DETAIL_EMPTY);
+        }
+        List<CartDTO> cartDTOList =
+                orderDTO.getOrderDetailList().stream()
+                        .map(e -> new CartDTO(e.getProductId(), e.getProductQuantity()))
+                        .collect(Collectors.toList());
+        productInfoService.increaseStock(cartDTOList);
+
+        // 4. 如果已支付，需要退款
+        if (orderDTO.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())) {
+            // TODO: 退款
+        }
+
+        return orderDTO;
     }
 
     @Override
+    @Transactional
     public OrderDTO finish(OrderDTO orderDTO) {
-        return null;
+        // 1. 订单状态
+        if (!orderDTO.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())) {
+            log.error("【完结订单】订单状态不正确，orderId= {}, orderStatus= {}", orderDTO.getOrderId(),
+                    orderDTO.getOrderStatus());
+            throw new WeChatOrderException(ResultEnum.ORDER_STATUS_ERROR);
+        }
+
+        // 2. 修改状态
+        orderDTO.setOrderStatus(OrderStatusEnum.FINISH.getCode());
+        OrderMaster orderMaster = new OrderMaster();
+        BeanUtils.copyProperties(orderDTO, orderMaster);
+        OrderMaster updateResult = orderMasterRepository.save(orderMaster);
+        if (null == updateResult) {
+            log.error("【完结订单】更新失败，orderMaster= {}", orderMaster);
+            throw new WeChatOrderException(ResultEnum.ORDER_UPDATE_FAIL);
+        }
+
+        return orderDTO;
     }
 
     @Override
+    @Transactional
     public OrderDTO paid(OrderDTO orderDTO) {
-        return null;
+        // 1. 判断订单状态
+        if (!orderDTO.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())) {
+            log.error("【订单支付】订单状态不正确，orderId= {}, orderStatus= {}", orderDTO.getOrderId(),
+                    orderDTO.getOrderStatus());
+            throw new WeChatOrderException(ResultEnum.ORDER_STATUS_ERROR);
+        }
+
+        // 2. 判断支付状态
+        if (!orderDTO.getPayStatus().equals(PayStatusEnum.WAIT.getCode())) {
+            log.error("【订单支付】订单支付状态不正确, orderDTO= {}", orderDTO);
+            throw new WeChatOrderException(ResultEnum.ORDER_PAY_STATUS);
+        }
+
+        // 3. 修改支付状态
+        orderDTO .setPayStatus(PayStatusEnum.SUCCESS.getCode());
+        OrderMaster orderMaster = new OrderMaster();
+        BeanUtils.copyProperties(orderDTO, orderMaster);
+        OrderMaster updateResult = orderMasterRepository.save(orderMaster);
+        if (null == updateResult) {
+            log.error("【订单支付】支付失败， orderMaster= {}", orderMaster);
+            throw new WeChatOrderException(ResultEnum.ORDER_UPDATE_FAIL);
+        }
+
+        return orderDTO;
     }
 }

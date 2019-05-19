@@ -14,7 +14,11 @@ public enum ResultEnum {
      * 10 商品不存在
      * 20 库存不正确
      * 30 订单不存在
-     * 40
+     * 40 订单详情不存在
+     * 50 订单状态不正确
+     * 60 订单更新失败
+     * 70 订单中无商品详情
+     * 80 订单支付状态不正确
      */
     PRODUCT_NOT_EXIST(10, "商品不存在"),
 
@@ -22,7 +26,15 @@ public enum ResultEnum {
 
     ORDER_NOT_EXIST(30, "订单不存在"),
 
-    ORDERDETAIL_NOT_EXIST(40, "订单详情不存在")
+    ORDERDETAIL_NOT_EXIST(40, "订单详情不存在"),
+
+    ORDER_STATUS_ERROR(50, "订单状态不正确"),
+
+    ORDER_UPDATE_FAIL(60, "订单更新失败"),
+
+    ORDER_DETAIL_EMPTY(70, "订单中无商品详情"),
+
+    ORDER_PAY_STATUS(80, "订单支付状态不正确")
     ;
 
     private Integer code;

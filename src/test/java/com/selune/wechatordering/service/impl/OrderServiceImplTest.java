@@ -1,6 +1,8 @@
 package com.selune.wechatordering.service.impl;
 
 import com.selune.wechatordering.dto.OrderDTO;
+import com.selune.wechatordering.enums.OrderStatusEnum;
+import com.selune.wechatordering.enums.PayStatusEnum;
 import com.selune.wechatordering.pojo.OrderDetail;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
@@ -11,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +34,7 @@ public class OrderServiceImplTest {
     private OrderServiceImpl orderService;
 
     @Test
+    @Transactional
     public void create() throws Exception {
 
         OrderDTO orderDTO = new OrderDTO();
@@ -73,14 +77,27 @@ public class OrderServiceImplTest {
     }
 
     @Test
+    @Transactional
     public void cancel() throws Exception {
+        OrderDTO orderDTO = orderService.findOne(ORDER_ID);
+        OrderDTO result = orderService.cancel(orderDTO);
+        Assert.assertEquals(OrderStatusEnum.CANCEL.getCode(), result.getOrderStatus());
     }
 
     @Test
+    @Transactional
     public void finish() throws Exception {
+        OrderDTO orderDTO = orderService.findOne(ORDER_ID);
+        OrderDTO result = orderService.finish(orderDTO);
+        Assert.assertEquals(OrderStatusEnum.FINISH.getCode(), result.getOrderStatus());
+
     }
 
     @Test
+    @Transactional
     public void paid() throws Exception {
+        OrderDTO orderDTO = orderService.findOne(ORDER_ID);
+        OrderDTO result = orderService.paid(orderDTO);
+        Assert.assertEquals(PayStatusEnum.SUCCESS.getCode(), result.getPayStatus());
     }
 }
