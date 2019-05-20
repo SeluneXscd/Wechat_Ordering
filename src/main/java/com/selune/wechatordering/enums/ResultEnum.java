@@ -11,30 +11,39 @@ import lombok.Getter;
 public enum ResultEnum {
 
     /**
+     * 0 参数不正确
      * 10 商品不存在
-     * 20 库存不正确
-     * 30 订单不存在
-     * 40 订单详情不存在
-     * 50 订单状态不正确
-     * 60 订单更新失败
-     * 70 订单中无商品详情
-     * 80 订单支付状态不正确
+     * 11 库存不正确
+     * 12 订单不存在
+     * 13 订单详情不存在
+     * 14 订单状态不正确
+     * 15 订单更新失败
+     * 16 订单中无商品详情
+     * 17 订单支付状态不正确
+     * 18 购物车为空
+     * 19 该订单不属于当前用户
      */
+    PARAM_ERROR(0, "参数错误"),
+
     PRODUCT_NOT_EXIST(10, "商品不存在"),
 
-    PRODUCT_STOCK_ERROR(20, "库存不正确"),
+    PRODUCT_STOCK_ERROR(11, "库存不正确"),
 
-    ORDER_NOT_EXIST(30, "订单不存在"),
+    ORDER_NOT_EXIST(12, "订单不存在"),
 
-    ORDERDETAIL_NOT_EXIST(40, "订单详情不存在"),
+    ORDERDETAIL_NOT_EXIST(13, "订单详情不存在"),
 
-    ORDER_STATUS_ERROR(50, "订单状态不正确"),
+    ORDER_STATUS_ERROR(14, "订单状态不正确"),
 
-    ORDER_UPDATE_FAIL(60, "订单更新失败"),
+    ORDER_UPDATE_FAIL(15, "订单更新失败"),
 
-    ORDER_DETAIL_EMPTY(70, "订单中无商品详情"),
+    ORDER_DETAIL_EMPTY(16, "订单中无商品详情"),
 
-    ORDER_PAY_STATUS(80, "订单支付状态不正确")
+    ORDER_PAY_STATUS(17, "订单支付状态不正确"),
+
+    CART_EMPTY(18, "购物车为空"),
+
+    ORDER_OWNER_ERROR(19, "该订单不属于当前用户")
     ;
 
     private Integer code;

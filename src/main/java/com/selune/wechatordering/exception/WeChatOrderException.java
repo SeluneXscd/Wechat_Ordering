@@ -17,4 +17,9 @@ public class WeChatOrderException extends RuntimeException {
 
         this.code = resultEnum.getCode();
     }
+
+    public WeChatOrderException(Integer code, String message) {
+        super(message);
+        this.code = code;
+    }
 }

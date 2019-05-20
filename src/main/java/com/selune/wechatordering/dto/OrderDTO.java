@@ -1,9 +1,13 @@
 package com.selune.wechatordering.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.selune.wechatordering.pojo.OrderDetail;
+import com.selune.wechatordering.utils.serializer.Date2LongSerializer;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +18,8 @@ import java.util.List;
  */
 
 @Data
+//@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL) // 当字段为空时，不返回
+//@JsonInclude(JsonInclude.Include.NON_NULL) // 当字段为空时，不返回
 public class OrderDTO {
 
     /** 订单id */
@@ -40,11 +46,16 @@ public class OrderDTO {
     /** 支付状态 */
     private Integer payStatus;
 
-    /** 创建时间 */
+    /** 创建时间
+     *  Json 时间转换
+     *  Date -> Long
+     */
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date createTime;
 
     /** 更新时间 */
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date updateTime;
 
-    List<OrderDetail> orderDetailList;
+    List<OrderDetail> orderDetailList = new ArrayList<>();
 }

@@ -1,5 +1,6 @@
 package com.selune.wechatordering.vo;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 /**
@@ -9,13 +10,14 @@ import lombok.Data;
  */
 
 @Data
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResultVO<T> {
 
     /** 错误码 code */
     private Integer code;
 
     /** 提示信息 message */
-    private String message;
+    private String message = "";
 
     /** 具体内容 data */
     private T data;
