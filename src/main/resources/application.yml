@@ -12,3 +12,11 @@ spring:
 server:
   context-path: /sell
   port: 8088
+
+wechat:
+  mp-app-id: wx898fcb01713c658
+  mp-app-secret: 29d8a650db31472aa87800e3b0d739f2
+  mchId: 1409146202
+  mchKey: c976503d34ca432c601361f969fd8d85
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://sell.natapp4.cc/sell/pay/notify
