@@ -30,3 +30,6 @@ HELP.md
 
 
 /log/
+/.mvn/
+/mvnw.cmd
+/mvnw
