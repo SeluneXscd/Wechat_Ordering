@@ -1,8 +1,12 @@
 package com.selune.wechatordering.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.selune.wechatordering.enums.OrderStatusEnum;
+import com.selune.wechatordering.enums.PayStatusEnum;
 import com.selune.wechatordering.pojo.OrderDetail;
+import com.selune.wechatordering.utils.EnumUtils;
 import com.selune.wechatordering.utils.serializer.Date2LongSerializer;
 import lombok.Data;
 
@@ -58,4 +62,15 @@ public class OrderDTO {
     private Date updateTime;
 
     List<OrderDetail> orderDetailList = new ArrayList<>();
+
+    /** 转成json格式时，忽略它 */
+    @JsonIgnore
+    public OrderStatusEnum getOrderStatusEnum() {
+        return EnumUtils.getByCode(orderStatus, OrderStatusEnum.class);
+    }
+
+    @JsonIgnore
+    public PayStatusEnum getPayStatusEnum() {
+        return EnumUtils.getByCode(payStatus, PayStatusEnum.class);
+    }
 }

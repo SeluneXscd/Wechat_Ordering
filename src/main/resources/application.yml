@@ -5,8 +5,8 @@ spring:
     password: admin
     url: jdbc:mysql://127.0.0.2:3309/sell?characterEncoding=utf-8&useSSL=false
   jpa:
-    show-sql: false
-  jackson:
+    show-sql: true
+#  jackson:
 #    default-property-inclusion: non_null
 
 server:
@@ -19,4 +19,4 @@ wechat:
   mchId: 1409146202
   mchKey: c976503d34ca432c601361f969fd8d85
   keyPath: /var/weixin_cert/h5.p12
-  notifyUrl: http://sell.natapp4.cc/sell/pay/notify
+  notifyUrl: http://sell.natapp4.cc/sell/templates/notify

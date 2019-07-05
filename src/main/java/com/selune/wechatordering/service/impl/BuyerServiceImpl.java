@@ -1,8 +1,10 @@
-package com.selune.wechatordering.service;
+package com.selune.wechatordering.service.impl;
 
 import com.selune.wechatordering.dto.OrderDTO;
 import com.selune.wechatordering.enums.ResultEnum;
 import com.selune.wechatordering.exception.WeChatOrderException;
+import com.selune.wechatordering.service.BuyerService;
+import com.selune.wechatordering.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

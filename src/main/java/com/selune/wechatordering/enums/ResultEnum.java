@@ -11,7 +11,8 @@ import lombok.Getter;
 public enum ResultEnum {
 
     /**
-     * 0 参数不正确
+     * 0 成功
+     * 1 参数不正确
      * 10 商品不存在
      * 11 库存不正确
      * 12 订单不存在
@@ -24,7 +25,9 @@ public enum ResultEnum {
      * 19 该订单不属于当前用户
      * 20 微信用户错误
      */
-    PARAM_ERROR(0, "参数错误"),
+    SUCCESS(0, "成功"),
+
+    PARAM_ERROR(1, "参数错误"),
 
     PRODUCT_NOT_EXIST(10, "商品不存在"),
 
@@ -46,7 +49,11 @@ public enum ResultEnum {
 
     ORDER_OWNER_ERROR(19, "该订单不属于当前用户"),
 
-    WECHAT_MP_ERROR(20, "微信用户错误")
+    WECHAT_MP_ERROR(20, "微信用户错误"),
+
+    ORDER_CANCEL_SUCCESS(21, "订单取消成功"),
+
+    ORDER_FINISH_SUCCESS(22, "订单完结成功")
     ;
 
     private Integer code;
