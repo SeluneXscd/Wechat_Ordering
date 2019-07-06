@@ -1,10 +1,15 @@
 package com.selune.wechatordering.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.selune.wechatordering.enums.ProductStatusEnum;
+import com.selune.wechatordering.utils.EnumUtils;
 import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * @Author: Selune
@@ -13,6 +18,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Data
+@DynamicUpdate
 public class ProductInfo {
 
     @Id
@@ -39,4 +45,12 @@ public class ProductInfo {
     /** 类目编号 */
     private Integer categoryType;
 
+    private Date createTime;
+
+    private Date updateTime;
+
+    @JsonIgnore
+    public ProductStatusEnum getProductStatusEnum() {
+        return EnumUtils.getByCode(productStatus, ProductStatusEnum.class);
+    }
 }

@@ -2,6 +2,7 @@ package com.selune.wechatordering.service.impl;
 
 import com.selune.wechatordering.enums.ProductStatusEnum;
 import com.selune.wechatordering.pojo.ProductInfo;
+import com.selune.wechatordering.repository.ProductInfoRepository;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -25,6 +27,9 @@ public class ProductInfoServiceImplTest {
 
     @Autowired
     private ProductInfoServiceImpl productInfoService;
+
+    @Autowired
+    private ProductInfoRepository productInfoRepository;
 
     @Test
     public void findOne() throws Exception {
@@ -60,5 +65,20 @@ public class ProductInfoServiceImplTest {
         ProductInfo result = productInfoService.save(productInfo);
         Assert.assertNotNull(result);
 
+    }
+
+    @Test
+    @Transactional
+    public void onSale() throws Exception {
+        productInfoService.onSale("123456");
+        Assert.assertEquals("结果正确", 0,
+                (int) productInfoRepository.findOne("123456").getProductStatusEnum().getCode());
+    }
+
+    @Test
+    public void offSale() throws Exception {
+        productInfoService.offSale("123457");
+        Assert.assertEquals("结果正确", 1,
+                (int) productInfoRepository.findOne("123457").getProductStatusEnum().getCode());
     }
 }
