@@ -19,8 +19,16 @@ public class KeyUtil {
 
         long time = System.currentTimeMillis();
 
-        Integer number = random.nextInt(900000) + 100000;
+        int number = random.nextInt(900000) + 100000;
 
         return String.valueOf(time + number);
+    }
+
+    public static synchronized String getProductId() {
+        Random random = new Random();
+
+        int number = random.nextInt(900) + 100;
+
+        return String.valueOf("100" + number);
     }
 }

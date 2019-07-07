@@ -60,6 +60,8 @@ public enum ResultEnum {
     ON_SALE_SUCCESS(24, "上架成功"),
 
     OFF_SALE_SUCCESS(25, "下架成功"),
+
+    PRODUCT_UPDATE_SUCCESS(26, "商品修改成功"),
     ;
 
     private Integer code;

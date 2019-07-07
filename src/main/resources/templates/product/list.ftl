@@ -3,7 +3,7 @@
 <body>
 <div id="wrapper" class="toggled">
     <#--    边栏sidebar-->
-    <#--    <#include "../common/nav.ftl">-->
+    <#include "../common/nav.ftl">
     <#--    主要内容content-->
     <div id="page-content-wrapper">
         <div class="container-fluid">
@@ -34,7 +34,9 @@
                                 <td>${productInfo.productPrice}</td>
                                 <td>${productInfo.productStock}</td>
                                 <td>${productInfo.productDescription}</td>
-                                <td>${productInfo.categoryType}</td>
+                                <td>
+                                            ${productInfo.categoryType}
+                                </td>
                                 <td>${productInfo.createTime}</td>
                                 <td>${productInfo.updateTime}</td>
                                 <td>
@@ -69,9 +71,9 @@
                             <li class="disabled"><a href="#">上一页</a></li>
                         <#else>
                             <li>
-                                <a href="/sell/seller/product/?page=${currentPage -
-                                1}&size=${size}">
-                                    上一页</a>
+                                <a href="/sell/seller/product/list?page=${currentPage - 1}&size=${size}">
+                                    上一页
+                                </a>
                             </li>
                         </#if>
                         <#-- m..n 的语法就是[m,n]，进行循环 -->
@@ -81,7 +83,9 @@
                                 <li class="disabled"><a href="#">${index}</a></li>
                             <#else>
                                 <li>
-                                    <a href="/sell/seller/order/list?page=${index}&size=${size}">${index}</a>
+                                    <a href="/sell/seller/product/list?page=${index}&size=${size}">
+                                        ${index}
+                                    </a>
                                 </li>
                             </#if>
                         </#list>
@@ -89,8 +93,9 @@
                             <li class="disabled"><a href="#">下一页</a>
                         <#else>
                             <li>
-                                <a href="/sell/seller/order/list?page=${currentPage +  1}&size=${size}">
-                                    下一页</a>
+                                <a href="/sell/seller/product/list?page=${currentPage + 1}&size=${size}">
+                                    下一页
+                                </a>
                             </li>
                         </#if>
                     </ul>
