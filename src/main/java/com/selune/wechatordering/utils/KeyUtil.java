@@ -14,7 +14,7 @@ public class KeyUtil {
      * 格式: 时间+随机数
      * @return 唯一主键
      */
-    public static synchronized String genUniqueKey() {
+    public static synchronized String getUniqueKey() {
         Random random = new Random();
 
         long time = System.currentTimeMillis();
@@ -30,5 +30,11 @@ public class KeyUtil {
         int number = random.nextInt(900) + 100;
 
         return String.valueOf("100" + number);
+    }
+
+    public static synchronized String getSellerId() {
+        Random random = new Random();
+        int number = random.nextInt(90) + 10;
+        return String.valueOf(100 + number);
     }
 }

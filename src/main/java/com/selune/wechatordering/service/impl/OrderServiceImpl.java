@@ -52,7 +52,7 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     public OrderDTO create(OrderDTO orderDTO) {
 
-        String orderId = KeyUtil.genUniqueKey();
+        String orderId = KeyUtil.getUniqueKey();
         BigDecimal orderAmount = new BigDecimal(BigInteger.ZERO);
 
         // 1. 查询商品( 数量, 价格)
@@ -67,7 +67,7 @@ public class OrderServiceImpl implements OrderService {
                     .multiply(new BigDecimal(orderDetail.getProductQuantity()))
                     .add(orderAmount);
             // 3. 订单详情入库 ( orderDetail)
-            orderDetail.setDetailId(KeyUtil.genUniqueKey());
+            orderDetail.setDetailId(KeyUtil.getUniqueKey());
             orderDetail.setOrderId(orderId);
             BeanUtils.copyProperties(productInfo, orderDetail);
 
