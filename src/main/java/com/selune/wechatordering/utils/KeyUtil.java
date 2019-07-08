@@ -35,6 +35,6 @@ public class KeyUtil {
     public static synchronized String getSellerId() {
         Random random = new Random();
         int number = random.nextInt(90) + 10;
-        return String.valueOf(100 + number);
+        return String.valueOf("100" + number);
     }
 }
