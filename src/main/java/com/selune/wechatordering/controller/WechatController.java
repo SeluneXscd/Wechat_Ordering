@@ -1,5 +1,6 @@
 package com.selune.wechatordering.controller;
 
+import com.selune.wechatordering.config.ProjectUrlConfig;
 import com.selune.wechatordering.enums.ResultEnum;
 import com.selune.wechatordering.exception.WeChatOrderException;
 import lombok.extern.slf4j.Slf4j;
@@ -31,11 +32,14 @@ public class WechatController {
     @Autowired
     private WxMpService wxOpenService;
 
+    @Autowired
+    private ProjectUrlConfig projectUrlConfig;
+
     @GetMapping("/authorize")
     public String authorize(@RequestParam("returnUrl") String returnUrl) {
         // 1. 配置
         // 2. 调用方法
-        String url = "http://sell.natapp4.cc/sell/wechat/userInfo";
+        String url = projectUrlConfig.getWechatMpAuthorize() + "/sell/wechat/userInfo";
         String redirectUrl = wxMpService.oauth2buildAuthorizationUrl(url,
                 WxConsts.OAUTH2_SCOPE_USER_INFO, URLEncoder.encode(returnUrl));
         return "redirect:" + redirectUrl;
@@ -60,7 +64,7 @@ public class WechatController {
     @GetMapping("/qrAuthorize")
     public String qrAuthorize(@RequestParam("returnUrl") String returnUrl) {
 
-        String url = "http://sell.natapp4.cc/sell/wechat/qrUserInfo";
+        String url = projectUrlConfig.getWechatOpenAuthorize() + "/sell/wechat/qrUserInfo";
         String redirectUrl = wxOpenService.buildQrConnectUrl(url,
                 WxConsts.QRCONNECT_SCOPE_SNSAPI_LOGIN, URLEncoder.encode(returnUrl));
         return "redirect:" + redirectUrl;
