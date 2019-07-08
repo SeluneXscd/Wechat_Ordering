@@ -26,4 +26,4 @@ wechat:
 projectUrl:
   wechatMpAuthorize: http://localhost:8088
   wechatOpenAuthorize: http://localhost:8088
-  sell:
+  sell: http://localhost:8088
