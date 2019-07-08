@@ -62,6 +62,10 @@ public enum ResultEnum {
     OFF_SALE_SUCCESS(25, "下架成功"),
 
     PRODUCT_UPDATE_SUCCESS(26, "商品修改成功"),
+
+    LOGIN_FAIL(27, "登录失败，登录信息不正确"),
+
+    LOGOUT_SUCCESS(28, "登出成功")
     ;
 
     private Integer code;
