@@ -6,6 +6,9 @@ spring:
     url: jdbc:mysql://127.0.0.2:3309/sell?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
 #  jackson:
 #    default-property-inclusion: non_null
 
