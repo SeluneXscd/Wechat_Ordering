@@ -29,3 +29,8 @@ projectUrl:
   wechatMpAuthorize: http://localhost:8088
   wechatOpenAuthorize: http://localhost:8088
   sell: http://localhost:8088
+
+# 设置mapper的日志级别为TRACE，输出SQL，结果等
+logging:
+  level:
+    com.selune.wechatordering.pojo.mapper: trace
