@@ -70,6 +70,10 @@
 
 [分布式系统](./docs/分布式系统.md)
 
+#### MyBatis
+
+[MyBatis](./docs/MyBatis.md)
+
 ##### 数据库设计
 
 1. 表之间的关系
@@ -124,6 +128,6 @@
 
 5. 优化
     - [x] 异常捕获
-    - [ ] MyBatis
+    - [x] MyBatis
     - [ ] 并发
     - [ ] Redis
