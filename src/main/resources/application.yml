@@ -34,3 +34,5 @@ projectUrl:
 logging:
   level:
     com.selune.wechatordering.pojo.mapper: trace
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
