@@ -15,6 +15,7 @@ import com.selune.wechatordering.repository.OrderMasterRepository;
 import com.selune.wechatordering.service.OrderService;
 import com.selune.wechatordering.service.ProductInfoService;
 import com.selune.wechatordering.service.PushMessageService;
+import com.selune.wechatordering.service.WebSocket;
 import com.selune.wechatordering.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -51,6 +52,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private PushMessageService pushMessageService;
+
+    @Autowired
+    private WebSocket webSocket;
 
     @Override
     @Transactional
@@ -93,6 +97,9 @@ public class OrderServiceImpl implements OrderService {
                         .map(e -> new CartDTO(e.getProductId(), e.getProductQuantity()))
                         .collect(Collectors.toList());
         productInfoService.decreaseStock(cartDTOList);
+
+        // 5. 发送WebSocket消息
+        webSocket.sendMessage("新订单：" + orderDTO.getOrderId());
 
         return orderDTO;
     }

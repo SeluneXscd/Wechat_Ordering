@@ -1,12 +1,14 @@
 package com.selune.wechatordering.exception;
 
 import com.selune.wechatordering.enums.ResultEnum;
+import lombok.Getter;
 
 /**
  * @Author: Selune
  * @Date: 5/14/19 6:49 PM
  */
 
+@Getter
 public class WeChatOrderException extends RuntimeException {
 
     private Integer code;
