@@ -3,6 +3,8 @@ package com.selune.wechatordering.vo;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * http 请求返回的最外层对象
  * @Author: Selune
@@ -11,7 +13,9 @@ import lombok.Data;
 
 @Data
 //@JsonInclude(JsonInclude.Include.NON_NULL)
-public class ResultVO<T> {
+public class ResultVO<T> implements Serializable {
+
+    private static final long serialVersionUID = 5585826380406624408L;
 
     /** 错误码 code */
     private Integer code;
