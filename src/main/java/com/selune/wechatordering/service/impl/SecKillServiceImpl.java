@@ -1,8 +1,11 @@
 package com.selune.wechatordering.service.impl;
 
 import com.selune.wechatordering.exception.WeChatOrderException;
+import com.selune.wechatordering.service.RedisLock;
 import com.selune.wechatordering.service.SecKillService;
 import com.selune.wechatordering.utils.KeyUtil;
+import org.omg.CORBA.TIMEOUT;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -15,6 +18,10 @@ import java.util.Map;
 
 @Service
 public class SecKillServiceImpl implements SecKillService {
+
+    private static final int TIMEOUT = 10 * 1000;
+    @Autowired
+    private RedisLock redisLock;
 
     /**
      * 活动，特价，限量100000份
@@ -49,7 +56,14 @@ public class SecKillServiceImpl implements SecKillService {
     }
 
     @Override
-    public synchronized void orderProductMockDiffUser(String productId) {
+    public void orderProductMockDiffUser(String productId) {
+
+        // 加锁
+        long time = System.currentTimeMillis() + TIMEOUT;
+        if (!redisLock.lock(productId, String.valueOf(time))) {
+            throw new WeChatOrderException(101, "哎哟喂，人也太多了，换个姿势在试试吧");
+        }
+
         // 1. 查询库存，为0则活动结束
         int stockNum = stock.get(productId);
         if (stockNum == 0) {
@@ -66,6 +80,9 @@ public class SecKillServiceImpl implements SecKillService {
             }
             stock.put(productId, stockNum);
         }
+
+        // 解锁
+        redisLock.unlock(productId, String.valueOf(time));
 
     }
 
