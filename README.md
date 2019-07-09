@@ -74,6 +74,10 @@
 
 [MyBatis](./docs/MyBatis.md)
 
+#### Redis
+
+[Redis](./docs/Redis.md)
+
 ##### 数据库设计
 
 1. 表之间的关系
@@ -129,5 +133,5 @@
 5. 优化
     - [x] 异常捕获
     - [x] MyBatis
-    - [ ] 并发
-    - [ ] Redis
+    - [x] 并发
+    - [x] Redis
