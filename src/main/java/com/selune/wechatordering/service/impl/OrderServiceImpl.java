@@ -14,6 +14,7 @@ import com.selune.wechatordering.repository.OrderDetailRepository;
 import com.selune.wechatordering.repository.OrderMasterRepository;
 import com.selune.wechatordering.service.OrderService;
 import com.selune.wechatordering.service.ProductInfoService;
+import com.selune.wechatordering.service.PushMessageService;
 import com.selune.wechatordering.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -47,6 +48,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderMasterRepository orderMasterRepository;
+
+    @Autowired
+    private PushMessageService pushMessageService;
 
     @Override
     @Transactional
@@ -188,6 +192,9 @@ public class OrderServiceImpl implements OrderService {
             log.error("【完结订单】更新失败，orderMaster= {}", orderMaster);
             throw new WeChatOrderException(ResultEnum.ORDER_UPDATE_FAIL);
         }
+
+        // 3. 推送微信模板信息
+        pushMessageService.orderStatus(orderDTO);
 
         return orderDTO;
     }
