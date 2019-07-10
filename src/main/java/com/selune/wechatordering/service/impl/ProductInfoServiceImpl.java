@@ -8,6 +8,10 @@ import com.selune.wechatordering.pojo.ProductInfo;
 import com.selune.wechatordering.repository.ProductInfoRepository;
 import com.selune.wechatordering.service.ProductInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -21,12 +25,14 @@ import java.util.List;
  */
 
 @Service
+@CacheConfig(cacheNames = "product")
 public class ProductInfoServiceImpl implements ProductInfoService {
 
     @Autowired
     private ProductInfoRepository productInfoRepository;
 
     @Override
+    @Cacheable(key = "#productId")
     public ProductInfo findOne(String productId) {
         return productInfoRepository.findOne(productId);
     }
@@ -42,6 +48,7 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     }
 
     @Override
+    @CachePut(key = "#productInfo.getProductId()")
     public ProductInfo save(ProductInfo productInfo) {
         return productInfoRepository.save(productInfo);
     }
