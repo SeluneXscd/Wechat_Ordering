@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: admin
+    url: jdbc:mysql://127.0.0.2:3309/sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+#  jackson:
+#    default-property-inclusion: non_null
+
+server:
+  context-path: /sell
+  port: 8080
+
+wechat:
+  mpAppId: wxc1336c47814b767c
+  mpAppSecret: fa736213d232099dfc54fd2b20e38e40
+  mchId: 1409146202
+  mchKey: c976503d34ca432c601361f969fd8d85
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://sell.natapp4.cc/sell/templates/notify
+  templateId:
+    orderStatus: 7xc_DqLcMubNzeoI_0Yyq7V0v9-Mb0mcJu4nKfJ-0fU
+projectUrl:
+  wechatMpAuthorize: http://localhost:8088
+  wechatOpenAuthorize: http://localhost:8088
+  sell: http://localhost:8088
+
+# 设置mapper的日志级别为TRACE，输出SQL，结果等
+logging:
+  level:
+    com.selune.wechatordering.pojo.mapper: trace
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
