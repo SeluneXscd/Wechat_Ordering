@@ -35,6 +35,12 @@
   - 卖家管理系统-添加分类
   
   ![](./docs/res/category_index.png)
+  
+  - 卖家管理系统-新订单提示
+  
+    使用PostMan接口测试，模拟新建订单，后台管理WebSocket收到新订单，发送提示到页面上
+  
+  ![](./docs/res/order_new.png)
 
 ### *项目架构*
 
