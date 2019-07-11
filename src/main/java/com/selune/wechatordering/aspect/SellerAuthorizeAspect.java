@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletRequest;
  * @Date: 7/8/19 10:16 PM
  */
 
-@Aspect
+//@Aspect // 微信扫码账号注册问题，已屏蔽扫码
 @Component
 @Slf4j
 public class SellerAuthorizeAspect {
