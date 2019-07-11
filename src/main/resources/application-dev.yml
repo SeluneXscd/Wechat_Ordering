@@ -26,9 +26,9 @@ wechat:
   templateId:
     orderStatus: 7xc_DqLcMubNzeoI_0Yyq7V0v9-Mb0mcJu4nKfJ-0fU
 projectUrl:
-  wechatMpAuthorize: http://localhost:8088
-  wechatOpenAuthorize: http://localhost:8088
-  sell: http://localhost:8088
+  wechatMpAuthorize: http://localhost:8080
+  wechatOpenAuthorize: http://localhost:8080
+  sell: http://localhost:8080
 
 # 设置mapper的日志级别为TRACE，输出SQL，结果等
 logging:
