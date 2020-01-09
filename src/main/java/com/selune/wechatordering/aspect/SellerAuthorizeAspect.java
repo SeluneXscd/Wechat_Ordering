@@ -33,17 +33,20 @@ public class SellerAuthorizeAspect {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
-    @Pointcut("execution(public * com.selune.wechatordering.controller.Sell*.*(..))" +
-            "&& " +
-            "!execution(public * com.selune.wechatordering.controller.SellerUserController.*(..))")
+    @Pointcut("include() && !exclude()")
     public void verify() {
 
     }
+    
+    @Pointcut("execution(public * com.selune.wechatordering.controller.Sell*.*(..))")
+    public void include(){}
+    
+    @Pointcut("execution(public * com.selune.wechatordering.controller.SellerUserController.*(..))")
+    public void exclude(){}
 
     @Before("verify()")
     public void doVerify() {
-        ServletRequestAttributes attributes =
-                (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
 
         // 查询Cookie
@@ -55,8 +58,7 @@ public class SellerAuthorizeAspect {
 
         // Redis 查询Cookie
         String tokenValue =
-                redisTemplate.opsForValue().get(String.format(RedisConstant.TOKEN_PREFIX,
-                        cookie.getValue()));
+                redisTemplate.opsForValue().get(String.format(RedisConstant.TOKEN_PREFIX, cookie.getValue()));
         if (StringUtils.isEmpty(tokenValue)) {
             log.warn("【登录校验】Redis中查不到token");
             throw new SellerAuthorizeException();
